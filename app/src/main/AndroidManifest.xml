@@ -20,13 +20,14 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/Theme.PhonePeTest"
+        android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
             android:name="com.example.phonepetest.ui.QuizMainScreenActivity"
             android:banner="@drawable/app_icon_your_company"
             android:exported="true"
             android:icon="@drawable/app_icon_your_company"
-            android:label="@string/title_activity_quiz_screen"
+            android:label="@string/quiz_screen"
             android:logo="@drawable/app_icon_your_company"
             android:screenOrientation="portrait">
             <intent-filter>

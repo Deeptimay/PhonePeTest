@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">PhonePeTest</string>
     <string name="title_activity_quiz_screen">Leanback QuizScreenActivity</string>
+    <string name="quiz_screen">Quiz Screen</string>
     <string name="browse_title">Videos by Your Company</string>
     <string name="related_movies">Related Videos</string>
     <string name="grid_view">Grid View</string>

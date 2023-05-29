@@ -14,8 +14,12 @@ class LettersAdapter @Inject constructor() :
     private var clickInterface: ClickInterface<String>? = null
 
     fun updateLetters(letters: List<Char>) {
+        val oldSize = this.letters.size
         this.letters = letters.toMutableList()
-        notifyItemRangeInserted(0, letters.size)
+        if (oldSize == 0)
+            notifyItemRangeInserted(0, letters.size)
+        else
+            notifyItemRangeRemoved(0, oldSize)
     }
 
 

@@ -28,7 +28,7 @@ class QuizRepo @Inject constructor(@ApplicationContext val appContext: Context) 
 
     private fun parseQuizDataFromRaw(): List<QuizData> {
         val gson = Gson()
-        val jsonString = appContext.loadJSONFromAssets("")
+        val jsonString = appContext.loadJSONFromAssets("quizraw.json")
         return gson.fromJson(jsonString, Array<QuizData>::class.java).asList()
     }
 

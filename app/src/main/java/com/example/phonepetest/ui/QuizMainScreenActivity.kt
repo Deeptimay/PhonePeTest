@@ -40,7 +40,8 @@ class QuizMainScreenActivity : AppCompatActivity() {
         })
 
         quizScreenViewModel.observeQuizList()?.observe(this) {
-            val listString = it.name.toList()
+            binding.tvAnswer.setText("")
+            val listString = it.name.toList().shuffled()
             letterAdapter.updateLetters(listString)
             Glide
                 .with(binding.root.context)

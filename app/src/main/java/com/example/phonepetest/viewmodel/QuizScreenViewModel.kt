@@ -47,22 +47,19 @@ class QuizScreenViewModel @Inject constructor(private val quizRepo: QuizRepo) : 
         }
     }
 
-    private fun submitQuiz(): Boolean {
-        if (quizList.size > quizPosition - 1) {
-            quizPosition++
-            return true
-        }
-        return false
+    private fun submitQuiz() {
+        quizPosition++
     }
 
     private fun updateQuizPosition() {
-        quizListLiveData.postValue(quizList[quizPosition])
+        if (quizList.size-1 > quizPosition)
+            quizListLiveData.postValue(quizList[quizPosition])
     }
 
     fun checkQuizAnswer(answer: String) {
         if (quizList[quizPosition].name == answer) {
-            if (submitQuiz())
-                updateQuizPosition()
+            submitQuiz()
+            updateQuizPosition()
         }
     }
 
