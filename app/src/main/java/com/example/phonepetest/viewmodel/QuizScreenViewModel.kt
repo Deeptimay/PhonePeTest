@@ -13,7 +13,7 @@ import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
-class MainViewModel @Inject constructor(private val quizRepo: QuizRepo) : ViewModel() {
+class QuizScreenViewModel @Inject constructor(private val quizRepo: QuizRepo) : ViewModel() {
 
     init {
         getQuizData()

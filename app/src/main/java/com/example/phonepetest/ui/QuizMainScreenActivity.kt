@@ -9,7 +9,7 @@ import com.bumptech.glide.Glide
 import com.example.phonepetest.adapters.ClickInterface
 import com.example.phonepetest.adapters.LettersAdapter
 import com.example.phonepetest.databinding.ActivityQuizMainScreenBinding
-import com.example.phonepetest.viewmodel.MainViewModel
+import com.example.phonepetest.viewmodel.QuizScreenViewModel
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 
@@ -20,7 +20,7 @@ class QuizMainScreenActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityQuizMainScreenBinding
 
-    private val mainViewModel: MainViewModel by viewModels()
+    private val quizScreenViewModel: QuizScreenViewModel by viewModels()
 
     @Inject
     lateinit var letterAdapter: LettersAdapter
@@ -39,7 +39,7 @@ class QuizMainScreenActivity : AppCompatActivity() {
             }
         })
 
-        mainViewModel.observeQuizList()?.observe(this) {
+        quizScreenViewModel.observeQuizList()?.observe(this) {
             val listString = it.name.toList()
             letterAdapter.updateLetters(listString)
             Glide
@@ -62,7 +62,7 @@ class QuizMainScreenActivity : AppCompatActivity() {
                 before: Int, count: Int
             ) {
                 if (s.isNotEmpty())
-                    mainViewModel.checkQuizAnswer(s.toString())
+                    quizScreenViewModel.checkQuizAnswer(s.toString())
             }
         })
     }
