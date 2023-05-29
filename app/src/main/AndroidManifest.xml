@@ -21,10 +21,7 @@
         android:theme="@style/Theme.PhonePeTest"
         tools:targetApi="31">
         <activity
-            android:name=".QuizMainScreenActivity"
-            android:exported="false" />
-        <activity
-            android:name=".QuizScreenActivity"
+            android:name="com.example.phonepetest.ui.QuizMainScreenActivity"
             android:banner="@drawable/app_icon_your_company"
             android:exported="true"
             android:icon="@drawable/app_icon_your_company"
@@ -37,15 +34,6 @@
                 <category android:name="android.intent.category.LEANBACK_LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".DetailsActivity"
-            android:exported="false" />
-        <activity
-            android:name=".PlaybackActivity"
-            android:exported="false" />
-        <activity
-            android:name=".BrowseErrorActivity"
-            android:exported="false" />
     </application>
 
 </manifest>
